@@ -1,0 +1,45 @@
+{
+    "paths": [
+        {
+            "name": "/products",
+            "lambdaFunction": "ecommerecefunc",
+            "privacy": {
+                "protected": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ],
+                "unauth": [
+                    "/GET"
+                ]
+            },
+            "policyResourceName": "/products"
+        }
+    ],
+    "resourceName": "ecommerceapi",
+    "apiName": "ecommerceapi",
+    "functionArns": [
+        {
+            "lambdaFunction": "ecommerecefunc"
+        }
+    ],
+    "privacy": {
+        "auth": 1,
+        "unauth": 1,
+        "authRoleName": "amplify-ecommerceapp-dev-233856-authRole",
+        "unAuthRoleName": "amplify-ecommerceapp-dev-233856-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "ecommerecefunc",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}
